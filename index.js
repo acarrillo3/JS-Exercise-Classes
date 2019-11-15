@@ -196,23 +196,18 @@ class Student extends Lambdasian {
         + `debugsCode` a method that takes in a student object and a subject and returns `{name} debugs {student.name}'s code on {subject}`
 */
 class ProjectManager extends Instructor {
-
+  constructor(PMatrr) {
+    super(PMatrr);
+    this.gradClassName = PMatrr.gradClassName;
+    this.favInstructor = PMatrr.favInstructor;
+  };
+  standUp(slackChannel) {
+    return `${this.name} announces to ${slackChannel}, @channel standy times!`;
+  };
+  debugsCode(student, subject) {
+    return `${this.name} debugs ${student.name}'s code on ${subject}`;
+  };
 }
-//   constructor(attributes){
-//     super(attributes);
-//     this.previousBackground = attributes.previousBackground;
-//     this.className = attributes.classNae;
-//     this.favSubjects = attributes.favSubjects;
-//   }
-//   listSubjects(){
-//     return `Loving ${this.favSubjects}!`
-//   }
-//   PRAssignments(subject){
-//     return `${this.name} has sumitted a PR for ${subject}`
-//   }
-
-// }
-
 /*
   STRETCH PROBLEM (no tests!)
     - Extend the functionality of the Student by adding a prop called grade and setting it equal to a number between 1-100.
