@@ -170,6 +170,7 @@ class Student extends Lambdasian {
     this.previousBackground = atrr.previousBackground;
     this.className = atrr.className;
     this.favSubjects = atrr.favSubjects;
+    this.grade = Math.floor(Math.random() * 100) + 1;
   };
   listSubjects() {
     return `Loving ${this.favSubjects}`
@@ -180,6 +181,14 @@ class Student extends Lambdasian {
   sprintChallenge(subject) {
     return `${this.name} has begun sprint challenge on ${subject}`;
   };
+  graduate() {
+    if(this.grade > 70) {
+      return `${this.name} has graduated!`;
+    }
+    else {
+      var randomNumber = Math.floor(Math.random() * 201) -100;
+    }
+  }
 }
 
 /*
@@ -200,6 +209,7 @@ class ProjectManager extends Instructor {
     super(PMatrr);
     this.gradClassName = PMatrr.gradClassName;
     this.favInstructor = PMatrr.favInstructor;
+    
   };
   standUp(slackChannel) {
     return `${this.name} announces to ${slackChannel}, @channel standy times!`;
