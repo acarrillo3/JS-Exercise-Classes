@@ -80,7 +80,21 @@ class Car {
     this.tank = 0;
     this.odometer = 0;
   }
+  fill(gallons) {
+    return (this.tank = this.tank + gallons);
+  };
+  drive(distance) {
+    if (this.milesPerGallon * this.tank < distance ) {
+       this.odometer = this.odometer + (this.milesPerGallon * this.tank);
+       this.tank = 0; 
 
+      return `I ran out of fuel at ${this.odometer} miles!`
+    }
+    else {
+    this.odometer += distance;
+    this.tank -= distance/this.milesPerGallon;
+    }
+  }
 }
 
 /*
@@ -96,7 +110,14 @@ class Car {
         + {name} and {location} of course come from the instance's own properties.
 */
 class Lambdasian {
-
+constructor(atrr) {
+  this.name = atrr.name;
+  this.age = atrr.age;
+  this.location = atrr.location;
+}
+speak() {
+  return `Hello my name is ${this.name}, I am from ${this.location}`;
+}
 }
 
 /*
@@ -149,9 +170,21 @@ class Student {
         + `standUp` a method that takes in a slack channel and returns `{name} announces to {channel}, @channel standy times!`
         + `debugsCode` a method that takes in a student object and a subject and returns `{name} debugs {student.name}'s code on {subject}`
 */
-class ProjectManager {
+class ProjectManager {}
+//   constructor(attributes){
+//     super(attributes);
+//     this.previousBackground = attributes.previousBackground;
+//     this.className = attributes.classNae;
+//     this.favSubjects = attributes.favSubjects;
+//   }
+//   listSubjects(){
+//     return `Loving ${this.favSubjects}!`
+//   }
+//   PRAssignments(subject){
+//     return `${this.name} has sumitted a PR for ${subject}`
+//   }
 
-}
+// }
 
 /*
   STRETCH PROBLEM (no tests!)
